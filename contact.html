@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us - TypeMaster</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="nav">
+
+        <a href="index.html" class="logo">
+            Type<span>Master</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="levels.html">Levels</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="login.html" data-auth-link>Login</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="typing-section">
+
+    <div class="section-title">
+
+        <p>GET IN TOUCH</p>
+
+        <h2>Contact TypeMaster</h2>
+
+    </div>
+
+
+    <div class="typing-card">
+
+        <h2>We'd Love to Hear From You</h2>
+
+        <p style="color:#8d96aa;
+                  line-height:1.8;
+                  margin-top:12px;">
+
+            Have a question, suggestion or problem?
+            Send us a message and let us know how we can
+            improve TypeMaster.
+
+        </p>
+
+
+        <form
+            style="margin-top:30px;"
+            onsubmit="sendMessage(event)">
+
+
+            <label>Name</label>
+
+            <input
+                id="contactName"
+                type="text"
+                placeholder="Your name"
+                required
+                style="
+                    width:100%;
+                    margin-top:8px;
+                    margin-bottom:20px;
+                    padding:14px;
+                    background:#080b14;
+                    color:white;
+                    border:1px solid #2c344a;
+                    border-radius:7px;
+                    outline:none;
+                "
+            >
+
+
+            <label>Email</label>
+
+            <input
+                id="contactEmail"
+                type="email"
+                placeholder="you@example.com"
+                required
+                style="
+                    width:100%;
+                    margin-top:8px;
+                    margin-bottom:20px;
+                    padding:14px;
+                    background:#080b14;
+                    color:white;
+                    border:1px solid #2c344a;
+                    border-radius:7px;
+                    outline:none;
+                "
+            >
+
+
+            <label>Subject</label>
+
+            <input
+                id="contactSubject"
+                type="text"
+                placeholder="How can we help?"
+                required
+                style="
+                    width:100%;
+                    margin-top:8px;
+                    margin-bottom:20px;
+                    padding:14px;
+                    background:#080b14;
+                    color:white;
+                    border:1px solid #2c344a;
+                    border-radius:7px;
+                    outline:none;
+                "
+            >
+
+
+            <label>Message</label>
+
+            <textarea
+                id="contactMessage"
+                placeholder="Write your message..."
+                required
+                style="
+                    width:100%;
+                    min-height:160px;
+                    margin-top:8px;
+                    margin-bottom:20px;
+                    padding:14px;
+                    background:#080b14;
+                    color:white;
+                    border:1px solid #2c344a;
+                    border-radius:7px;
+                    outline:none;
+                    resize:vertical;
+                "
+            ></textarea>
+
+
+            <button
+                type="submit"
+                class="primary">
+
+                Send Message →
+
+            </button>
+
+        </form>
+
+
+        <div
+            id="messageStatus"
+            style="
+                display:none;
+                margin-top:20px;
+                padding:15px;
+                border-radius:7px;
+                background:#10291b;
+                color:#49df82;
+            "
+        ></div>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+                Type<span>Master</span>
+            </h3>
+
+            <p>
+                Practice typing. Improve your speed.
+                Build better accuracy.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <a href="privacy.html">
+                Privacy Policy
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <p class="copyright">
+        © 2026 TypeMaster.
+        All rights reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+function sendMessage(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("contactName").value;
+
+    const status =
+        document.getElementById("messageStatus");
+
+    status.style.display = "block";
+
+    status.textContent =
+        `Thanks ${name}! Your message has been received.`;
+
+    event.target.reset();
+
+}
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TypeMaster — Typing Speed Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="index.html">Type<span>Master</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#typing">Typing Test</a>
+      <a href="levels.html">Levels</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="login.html" data-auth-link>Login</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="typing-section">
+
+  <div class="section-title">
+    <p>⚡ IMPROVE YOUR TYPING</p>
+    <h1>Type Faster.<br>Type Better.</h1>
+    <p>Improve your typing speed and accuracy through 5 progressive levels.</p>
+  </div>
+
+  <div class="levels">
+    <button class="level active" data-level="1"><b>Level 1</b><small>50 words • Easy</small></button>
+    <button class="level" data-level="2"><b>Level 2</b><small>100 words • Easy</small></button>
+    <button class="level" data-level="3"><b>Level 3</b><small>150 words • Medium</small></button>
+    <button class="level" data-level="4"><b>Level 4</b><small>200 words • Hard</small></button>
+    <button class="level" data-level="5"><b>Level 5</b><small>250 words • Expert</small></button>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><strong id="timer">15:00</strong><span>Time</span></div>
+    <div class="stat"><strong id="wpm">0</strong><span>WPM</span></div>
+    <div class="stat"><strong id="accuracy">100%</strong><span>Accuracy</span></div>
+    <div class="stat"><strong id="mistakes">0</strong><span>Mistakes</span></div>
+    <div class="stat"><strong id="characters">0</strong><span>Characters</span></div>
+  </div>
+
+  <div class="finger-guide">
+    <div class="guide-title">🖐️ Finger Guide</div>
+    <div class="hands">
+      <div>
+        <strong>LEFT HAND</strong>
+        <span>Pinky → Q A Z</span>
+        <span>Ring → W S X</span>
+        <span>Middle → E D C</span>
+        <span>Index → R F V T G B</span>
+      </div>
+      <div>
+        <strong>RIGHT HAND</strong>
+        <span>Index → Y H N U J M</span>
+        <span>Middle → I K ,</span>
+        <span>Ring → O L .</span>
+        <span>Pinky → P ; /</span>
+      </div>
+    </div>
+    <div class="thumb-guide">👍 SPACE → Either Thumb</div>
+    <p class="guide-message" id="guideMessage">Press Start Test to begin. The keyboard will show the next key.</p>
+  </div>
+
+  <div class="live-keyboard" id="liveKeyboard">
+    <div class="keyboard-row">
+      <button data-key="q">Q</button><button data-key="w">W</button><button data-key="e">E</button>
+      <button data-key="r">R</button><button data-key="t">T</button><button data-key="y">Y</button>
+      <button data-key="u">U</button><button data-key="i">I</button><button data-key="o">O</button><button data-key="p">P</button>
+    </div>
+    <div class="keyboard-row">
+      <button data-key="a">A</button><button data-key="s">S</button><button data-key="d">D</button>
+      <button data-key="f">F</button><button data-key="g">G</button><button data-key="h">H</button>
+      <button data-key="j">J</button><button data-key="k">K</button><button data-key="l">L</button><button data-key=";">;</button>
+    </div>
+    <div class="keyboard-row">
+      <button data-key="z">Z</button><button data-key="x">X</button><button data-key="c">C</button>
+      <button data-key="v">V</button><button data-key="b">B</button><button data-key="n">N</button>
+      <button data-key="m">M</button><button data-key=",">,</button><button data-key=".">.</button><button data-key="/">/</button>
+    </div>
+    <div class="keyboard-row">
+      <button class="space-key" data-key=" ">SPACE</button>
+    </div>
+  </div>
+
+  <div class="typing-card" id="typing">
+    <div class="card-heading">
+      <h2>Level <span id="currentLevel">1</span></h2>
+      <span id="wordTarget">50 words</span>
+    </div>
+
+    <div id="textDisplay" aria-label="Typing text"></div>
+
+    <textarea id="typingInput" disabled autocomplete="off" spellcheck="false"
+      placeholder="Press Start Test and begin typing..."></textarea>
+
+    <div class="progress-container">
+      <div class="progress-info"><span>Progress</span><span id="progressText">0%</span></div>
+      <div class="progress"><div id="progressBar"></div></div>
+    </div>
+
+    <div class="button-row">
+      <button id="startBtn" class="primary">Start Test</button>
+      <button id="nextBtn" class="primary" hidden>Next Level →</button>
+    </div>
+  </div>
+
+  <div class="typing-card graph-card">
+    <div class="card-heading">
+      <h2>Live Typing Speed</h2>
+      <span>WPM</span>
+    </div>
+    <canvas id="speedCanvas" width="1000" height="280"></canvas>
+  </div>
+
+</section>
+</main>
+
+<!-- Result popup -->
+<div id="resultModal" class="result-modal" aria-hidden="true">
+  <div class="result-modal-box" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+    <button id="closeResult" class="result-close" aria-label="Close result">❌</button>
+    <div class="result-icon">🎉</div>
+    <h2 id="resultTitle">Test Complete!</h2>
+    <p class="result-subtitle">Your paragraph is complete. Here are your results.</p>
+
+    <div class="result-stats">
+      <div class="result-box"><strong id="finalWpm">0</strong><span>WPM</span></div>
+      <div class="result-box"><strong id="finalAccuracy">100%</strong><span>Accuracy</span></div>
+      <div class="result-box"><strong id="finalMistakes">0</strong><span>Mistakes</span></div>
+      <div class="result-box"><strong id="finalSpeed">0%</strong><span>Speed Score</span></div>
+      <div class="result-box"><strong id="finalTime">00:00</strong><span>Completion Time</span></div>
+    </div>
+
+    <p id="finalMessage" class="final-message">Great job! Keep practicing.</p>
+
+    <div class="modal-actions">
+      <button id="modalNext" class="primary">Next Level →</button>
+      <button id="modalContinue" class="secondary">Close</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div>
+      <h3>Type<span>Master</span></h3>
+      <p>Improve your typing speed, accuracy and confidence.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="levels.html">Levels</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="login.html" data-auth-link>Login</a>
+    </div>
+  </div>
+  <div class="copyright">© 2026 TypeMaster. All rights reserved.</div>
+</footer>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth.js"></script>
+</body>
+</html>

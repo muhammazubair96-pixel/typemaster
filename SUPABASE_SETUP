@@ -1,0 +1,16 @@
+TYPEMASTER SUPABASE LOGIN SETUP
+
+1. Authentication > Providers > Email should be enabled.
+2. For easiest testing, you can turn off "Confirm email". For a real public site, keeping email confirmation ON is recommended.
+3. Authentication > URL Configuration:
+   - Site URL: set this to your final website URL, e.g. https://yourdomain.com
+   - Add Redirect URL for login password reset, e.g. https://yourdomain.com/login.html
+4. Never put a Supabase secret/service_role key in the website. This project uses only the publishable key.
+5. Upload all files to the same folder/repository. New files:
+   - auth.js
+   - login.html
+   - signup.html
+   - reset-password.html
+   - account.html
+
+The login/signup system uses Supabase Auth. It does not require a database table for basic authentication.

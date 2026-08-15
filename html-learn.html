@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Learn - TypeMaster</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <style>
+
+        .learn-container {
+
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding: 70px 20px;
+
+        }
+
+
+        .learn-hero {
+
+            text-align: center;
+
+            margin-bottom: 50px;
+
+        }
+
+
+        .learn-hero h1 {
+
+            font-size:
+                clamp(40px, 6vw, 70px);
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .learn-hero h1 span {
+
+            color: #756cff;
+
+        }
+
+
+        .learn-hero p {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #8992a8;
+
+            line-height: 1.8;
+
+        }
+
+
+        .html-card {
+
+            background: #0d111d;
+
+            border: 1px solid #252c40;
+
+            border-radius: 14px;
+
+            padding: 25px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .html-card h2 {
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .html-card > p {
+
+            color: #8992a8;
+
+            line-height: 1.7;
+
+        }
+
+
+        .code-box {
+
+            margin-top: 20px;
+
+            background: #070a12;
+
+            border: 1px solid #252c40;
+
+            border-radius: 9px;
+
+            overflow: hidden;
+
+        }
+
+
+        .code-title {
+
+            padding: 10px 15px;
+
+            background: #111625;
+
+            color: #8992a8;
+
+            font-size: 12px;
+
+        }
+
+
+        pre {
+
+            padding: 20px;
+
+            overflow-x: auto;
+
+            color: #d8dded;
+
+            line-height: 1.7;
+
+            font-family:
+                Consolas,
+                monospace;
+
+        }
+
+
+        .result-box {
+
+            margin-top: 15px;
+
+            padding: 20px;
+
+            background: #111625;
+
+            border-radius: 8px;
+
+        }
+
+
+        .result-title {
+
+            color: #756cff;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .tag-list {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+
+            margin-top: 25px;
+
+        }
+
+
+        .tag-item {
+
+            padding: 18px;
+
+            background: #080b14;
+
+            border: 1px solid #252c40;
+
+            border-radius: 9px;
+
+        }
+
+
+        .tag-item code {
+
+            color: #9c95ff;
+
+            font-size: 15px;
+
+        }
+
+
+        .tag-item p {
+
+            color: #7f899f;
+
+            margin-top: 7px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .learn-button {
+
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 12px 20px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background: #756cff;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+        }
+
+
+        .learn-input {
+
+            display: block;
+
+            width: 100%;
+
+            max-width: 400px;
+
+            margin-top: 15px;
+
+            padding: 12px;
+
+            background: #080b14;
+
+            border: 1px solid #30384d;
+
+            color: white;
+
+            border-radius: 7px;
+
+        }
+
+
+        @media(max-width:700px) {
+
+            .tag-list {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="nav">
+
+        <a href="welcome.html"
+           class="logo">
+
+            Type<span>Master</span>
+
+        </a>
+
+
+        <nav>
+
+            <a href="index.html">
+                Typing
+            </a>
+
+            <a href="html-learn.html">
+                HTML Learn
+            </a>
+
+            <a href="levels.html">
+                Levels
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="blog.html">
+                Blog
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<main class="learn-container">
+
+
+    <section class="learn-hero">
+
+        <h1>
+            Learn <span>HTML</span>
+        </h1>
+
+        <p>
+
+            Learn the most useful HTML tags and elements
+            with simple examples. Write the code and
+            understand what each element does.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- BASIC HTML -->
+
+    <section class="html-card">
+
+        <h2>
+            1. HTML Heading
+        </h2>
+
+        <p>
+            Headings are used for titles and section names.
+            HTML provides headings from H1 to H6.
+        </p>
+
+
+        <div class="code-box">
+
+            <div class="code-title">
+                HTML
+            </div>
+
+            <pre>
+&lt;h1&gt;My Website&lt;/h1&gt;
+&lt;h2&gt;About Me&lt;/h2&gt;
+&lt;h3&gt;My Skills&lt;/h3&gt;
+            </pre>
+
+        </div>
+
+
+        <div class="result-box">
+
+            <div class="result-title">
+                RESULT
+            </div>
+
+            <h1>
+                My Website
+            </h1>
+
+            <h2>
+                About Me
+            </h2>
+
+            <h3>
+                My Skills
+            </h3>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PARAGRAPH -->
+
+    <section class="html-card">
+
+        <h2>
+            2. Paragraph
+        </h2>
+
+        <p>
+            The <code>&lt;p&gt;</code> tag is used to create
+            normal text paragraphs.
+        </p>
+
+
+        <div class="code-box">
+
+            <div class="code-title">
+                HTML
+            </div>
+
+            <pre>
+&lt;p&gt;
+This is my first paragraph.
+&lt;/p&gt;
+            </pre>
+
+        </div>
+
+
+        <div class="result-box">
+
+            <div class="result-title">
+                RESULT
+            </div>
+
+            <p>
+                This is my first paragraph.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- LINK -->
+
+    <section class="html-card">
+
+        <h2>
+            3. Link
+        </h2>
+
+        <p>
+            Use the <code>&lt;a&gt;</code> tag to create
+            clickable links.
+        </p>
+
+
+        <div class="code-box">
+
+            <pre>
+&lt;a href="https://example.com"&gt;
+Visit Website
+&lt;/a&gt;
+            </pre>
+
+        </div>
+
+
+        <div class="result-box">
+
+            <div class="result-title">
+                RESULT
+            </div>
+
+            <a href="#"
+               style="color:#756cff;">
+
+                Visit Website
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- BUTTON -->
+
+    <section class="html-card">
+
+        <h2>
+            4. Button
+        </h2>
+
+        <p>
+            The <code>&lt;button&gt;</code> element creates
+            a clickable button.
+        </p>
+
+
+        <div class="code-box">
+
+            <pre>
+&lt;button&gt;
+Click Me
+&lt;/button&gt;
+            </pre>
+
+        </div>
+
+
+        <div class="result-box">
+
+            <div class="result-title">
+                RESULT
+            </div>
+
+            <button
+                class="learn-button"
+                onclick="showButtonMessage()">
+
+                Click Me
+
+            </button>
+
+            <p id="buttonMessage"
+               style="
+               margin-top:15px;
+               color:#49df82;
+               ">
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- INPUT -->
+
+    <section class="html-card">
+
+        <h2>
+            5. Input
+        </h2>
+
+        <p>
+            Input fields allow users to enter information.
+        </p>
+
+
+        <div class="code-box">
+
+            <pre>
+&lt;input
+type="text"
+placeholder="Enter your name"&gt;
+            </pre>
+
+        </div>
+
+
+        <div class="result-box">
+
+            <div class="result-title">
+                RESULT
+            </div>
+
+            <input
+                class="learn-input"
+                type="text"
+                placeholder="Enter your name">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- IMAGE -->
+
+    <section class="html-card">
+
+        <h2>
+            6. Image
+        </h2>
+
+        <p>
+            The <code>&lt;img&gt;</code> tag displays an image.
+        </p>
+
+
+        <div class="code-box">
+
+            <pre>
+&lt;img
+src="image.jpg"
+alt="My Image"&gt;
+            </pre>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- LIST -->
+
+    <section class="html-card">
+
+        <h2>
+            7. Lists
+        </h2>
+
+        <p>
+            HTML supports ordered and unordered lists.
+        </p>
+
+
+        <div class="code-box">
+
+            <pre>
+&lt;ul&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
+
+        </div>
+
+
+        <div class="result-box">
+
+            <div class="result-title">
+                RESULT
+            </div>
+
+            <ul>
+
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FORM -->
+
+    <section class="html-card">
+
+        <h2>
+            8. Form
+        </h2>
+
+        <p>
+            Forms are used to collect information from users.
+        </p>
+
+
+        <div class="code-box">
+
+            <pre>
+&lt;form&gt;
+
+    &lt;label&gt;Name&lt;/label&gt;
+
+    &lt;input type="text"&gt;
+
+    &lt;button&gt;
+        Submit
+    &lt;/button&gt;
+
+&lt;/form&gt;
+            </pre>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- COMMON TAGS -->
+
+    <section class="html-card">
+
+        <h2>
+            Common HTML Tags
+        </h2>
+
+
+        <div class="tag-list">
+
+
+            <div class="tag-item">
+
+                <code>&lt;h1&gt;</code>
+
+                <p>
+                    Main heading
+                </p>
+
+            </div>
+
+
+            <div class="tag-item">
+
+                <code>&lt;p&gt;</code>
+
+                <p>
+                    Paragraph
+                </p>
+
+            </div>
+
+
+            <div class="tag-item">
+
+                <code>&lt;a&gt;</code>
+
+                <p>
+                    Link
+                </p>
+
+            </div>
+
+
+            <div class="tag-item">
+
+                <code>&lt;button&gt;</code>
+
+                <p>
+                    Clickable button
+                </p>
+
+            </div>
+
+
+            <div class="tag-item">
+
+                <code>&lt;input&gt;</code>
+
+                <p>
+                    Input field
+                </p>
+
+            </div>
+
+
+            <div class="tag-item">
+
+                <code>&lt;img&gt;</code>
+
+                <p>
+                    Image
+                </p>
+
+            </div>
+
+
+            <div class="tag-item">
+
+                <code>&lt;ul&gt;</code>
+
+                <p>
+                    Unordered list
+                </p>
+
+            </div>
+
+
+            <div class="tag-item">
+
+                <code>&lt;form&gt;</code>
+
+                <p>
+                    Form container
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+                Type<span>Master</span>
+            </h3>
+
+            <p>
+                Practice typing. Improve your speed.
+                Build better accuracy.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <a href="privacy.html">
+                Privacy Policy
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <p class="copyright">
+
+        © 2026 TypeMaster.
+        All rights reserved.
+
+    </p>
+
+</footer>
+
+
+
+<script>
+
+function showButtonMessage() {
+
+    document.getElementById(
+        "buttonMessage"
+    ).textContent =
+        "Button clicked!";
+
+}
+
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth.js"></script>
+</body>
+
+</html>
